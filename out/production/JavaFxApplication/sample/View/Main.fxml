@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?language JavaScript?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="600.0" maxWidth="960.0" prefHeight="600.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Controller">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar>
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Open" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Nothing here" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox alignment="CENTER_LEFT" prefHeight="61.0" prefWidth="940.0">
+               <children>
+                  <TextField fx:id="inputText" maxWidth="-Infinity" onKeyTyped="#searching" prefColumnCount="0" prefHeight="39.0" prefWidth="302.0" promptText="search" />
+                  <AnchorPane prefHeight="61.0" prefWidth="380.0">
+                     <children>
+                        <ChoiceBox fx:id="choicebox" layoutX="114.0" layoutY="24.0" onMouseClicked="#openDictionary" prefHeight="25.0" prefWidth="200.0" />
+                        <Text layoutX="114.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of dictionary" wrappingWidth="183.13543701171875" />
+                     </children>
+                  </AnchorPane>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#addWordScene" prefHeight="39.0" prefWidth="75.0" text="Add" textAlignment="CENTER" />
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#addDictScene" prefHeight="39.0" prefWidth="174.0" text="New Dictionary" textOverrun="WORD_ELLIPSIS" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </top>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextArea fx:id="outputText" editable="false" layoutX="1.0" prefHeight="705.0" prefWidth="924.0" promptText="defination stay here" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <ImageView fx:id="editbutton" fitHeight="32.0" fitWidth="30.0" layoutX="595.0" layoutY="21.0" onMouseClicked="#edit" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="20.0">
+               <image>
+                  <Image url="@../image/edit.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+            <ImageView fx:id="deletebutton" fitHeight="32.0" fitWidth="30.0" layoutX="361.0" layoutY="20.0" onMouseClicked="#delete" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="94.0" AnchorPane.topAnchor="20.0">
+               <image>
+                  <Image url="@../image/delete-button.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <ListView fx:id="dictList" onMouseClicked="#getListItem" prefHeight="505.0" prefWidth="305.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>
