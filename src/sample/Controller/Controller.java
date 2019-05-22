@@ -21,49 +21,55 @@ import java.io.*;
 import java.net.URL;
 import java.util.*;
 
-
+//
+//
 public class Controller implements Initializable {
-    @FXML
-    public TextField inputText;
-    public TextArea outputText;
-    public ImageView editbutton;
-    public ListView<String> dictList;
-    public ImageView deletebutton;
-    public ChoiceBox<String> choicebox;
-
-    public TextField wordAdd;
-    public TextArea meaningAdd;
-
+//    @FXML
+//    public TextField inputText;
+//    public TextArea outputText;
+//    public ImageView editbutton;
+//    public ListView<String> dictList;
+//    public ImageView deletebutton;
+//    public ChoiceBox<String> choicebox;
+//
+        public ComboBox<String> choicebox;
+    public MenuButton box;
+    //    public TextField wordAdd;
+//    public TextArea meaningAdd;
+//
     private Scene addScene;
     private static TreeMap<String,String> dictionary;
     private static String dictname;
     public static ArrayList<String> order = new ArrayList<>();
-
-
-
-    // Trong controller này có 2 kiểu đối tượng TreeMap và ListView. Treemap là nơi danh sách các từ được load vào, đồng
-    // thời được add vào ListView để hiển thị.
-    // Trên lý thuyết, để tối ưu thì ta phải coi TreeMap như 1 ObservableList và truyền cho ListView. Khi đó, nếu có
-    // bất cứ thay đổi nào ở ObservableList thì ListView sẽ tự cập nhật, và khi đấy có thể lược bỏ hàm updateListView()
-
-    // hàm initialize là hàm khởi tạo, ở đây tất cả các chức năng ( trừ addWord/addDict) đều tương tác với nội dung
-    // từ điển ( TreeMap) vì vậy phải load toàn bộ dữ liệu của từ điển ( Trong file thuộc folder listDictionary) vào
-    // 2 kiểu đối tượng TreeMap / String dictname
-
-
+    public ListView dictList;
+    public TextField inputText;
+    public TextArea outputText;
+//
+//
+//
+//    // Trong controller này có 2 kiểu đối tượng TreeMap và ListView. Treemap là nơi danh sách các từ được load vào, đồng
+//    // thời được add vào ListView để hiển thị.
+//    // Trên lý thuyết, để tối ưu thì ta phải coi TreeMap như 1 ObservableList và truyền cho ListView. Khi đó, nếu có
+//    // bất cứ thay đổi nào ở ObservableList thì ListView sẽ tự cập nhật, và khi đấy có thể lược bỏ hàm updateListView()
+//
+//    // hàm initialize là hàm khởi tạo, ở đây tất cả các chức năng ( trừ addWord/addDict) đều tương tác với nội dung
+//    // từ điển ( TreeMap) vì vậy phải load toàn bộ dữ liệu của từ điển ( Trong file thuộc folder listDictionary) vào
+//    // 2 kiểu đối tượng TreeMap / String dictname
+//
+//
     //done
     public void addWordScene(ActionEvent event) throws IOException {
-        FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/addWord.fxml"));
+        FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/newWord.fxml"));
         addParent.setController(this);
         addScene =new Scene(addParent.load());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(addScene);
         window.show();
     }
-
+//
     //done
     public void addDictScene(ActionEvent event) throws IOException {
-        FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/addDict.fxml"));
+        FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/addDict1.fxml"));
         addScene =new Scene(addParent.load());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(addScene);
@@ -71,61 +77,61 @@ public class Controller implements Initializable {
     }
 
     public void backToMainScene(ActionEvent event) throws IOException {
-        FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/Main.fxml"));
+        FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/mains.fxml"));
         addScene =new Scene(addParent.load());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(addScene);
         window.show();
     }
+//
+//    public void AddtoMainScene(ActionEvent event) throws IOException {
+//        String wordadd = wordAdd.getText();
+//        String meaningadd = meaningAdd.getText();
+//        dictionary.put(wordadd,meaningadd);
+//        updateToFile(dictname);
+//        backToMainScene(event);
+//    }
 
-    public void AddtoMainScene(ActionEvent event) throws IOException {
-        String wordadd = wordAdd.getText();
-        String meaningadd = meaningAdd.getText();
-        dictionary.put(wordadd,meaningadd);
-        updateToFile(dictname);
-        backToMainScene(event);
-    }
-
-    //done
-    // set editable for the word's meaning
-    public void edit(MouseEvent mouseEvent){
-        if(outputText.isEditable()){  // khóa edit để bắt đầu update từ
-            outputText.setEditable(false);
-            editMeaning();
-        }else {
-            outputText.setEditable(true); // mở để bắt đầu edit
-        }
-    }
-
-    //done
-    public void delete(MouseEvent event){
-        int i = 0;
-        String word = inputText.getText();
-        String name = dictList.getSelectionModel().getSelectedItem();
-        try {
-
-            if (dictionary.containsKey(name)){
-                dictionary.remove(name);
-                i =1;
-            }
-//            else if (dictionary.containsKey(word)){
+//    //done
+//    // set editable for the word's meaning
+//    public void edit(MouseEvent mouseEvent){
+//        if(outputText.isEditable()){  // khóa edit để bắt đầu update từ
+//            outputText.setEditable(false);
+//            editMeaning();
+//        }else {
+//            outputText.setEditable(true); // mở để bắt đầu edit
+//        }
+//    }
+//
+//    //done
+//    public void delete(MouseEvent event){
+//        int i = 0;
+//        String word = inputText.getText();
+//        String name = dictList.getSelectionModel().getSelectedItem();
+//        try {
+//
+//            if (dictionary.containsKey(name)){
+//                dictionary.remove(name);
+//                i =1;
+//            }
+////            else if (dictionary.containsKey(word)){
+////                dictionary.remove(word);
+////            }
+//        }catch (Exception e){
+//        }
+//        finally {
+//            if ( i == 0 && dictionary.containsKey(word)){
 //                dictionary.remove(word);
 //            }
-        }catch (Exception e){
-        }
-        finally {
-            if ( i == 0 && dictionary.containsKey(word)){
-                dictionary.remove(word);
-            }
-            outputText.clear();
-            inputText.clear();
-            updateListView();
-            updateToFile(dictname);
-        }
-
-
-
-    }
+//            outputText.clear();
+//            inputText.clear();
+//            updateListView();
+//            updateToFile(dictname);
+//        }
+//
+//
+//
+//    }
 
     private void updateListView() {
         dictList.getItems().clear(); // xóa ListView + add lại sau khi đã chỉnh sửa treemap
@@ -134,20 +140,20 @@ public class Controller implements Initializable {
             dictList.getItems().add(key);
         }
     }
-
-    private void editMeaning(){
-        String word,name;
-        String meaning;
-        word =  inputText.getText();
-        meaning = outputText.getText();
-        name = dictList.getSelectionModel().getSelectedItem();
-        if (dictionary.containsKey(name)){
-            dictionary.replace(name,meaning);
-        }else if (dictionary.containsKey(word)){ // if trong trường hợp click edit khi chưa search xong 1 từ nào
-            dictionary.replace(word,meaning); // update từ
-        }
-        updateToFile(dictname);
-    }
+//
+//    private void editMeaning(){
+//        String word,name;
+//        String meaning;
+//        word =  inputText.getText();
+//        meaning = outputText.getText();
+//        name = dictList.getSelectionModel().getSelectedItem();
+//        if (dictionary.containsKey(name)){
+//            dictionary.replace(name,meaning);
+//        }else if (dictionary.containsKey(word)){ // if trong trường hợp click edit khi chưa search xong 1 từ nào
+//            dictionary.replace(word,meaning); // update từ
+//        }
+//        updateToFile(dictname);
+//    }
 
     private void updateToFile(String filename) {
         // mở file và viết lại vào theo format định sẵn ( dựa trên Treemap / dictname đã đc gán giá trị trong hàm getDict()
@@ -183,7 +189,7 @@ public class Controller implements Initializable {
         outputText.setEditable(false);
         autocomplete(input);
     }
-
+//
     private String getMeaning(String word){
         String notfound = null;
         Set<String> keys = dictionary.keySet();
@@ -192,7 +198,7 @@ public class Controller implements Initializable {
         }
         return notfound;
     }
-
+//
     private void autocomplete(String word) {
         String recentword =  word + "(.*)";
         dictList.getItems().clear();
@@ -203,20 +209,20 @@ public class Controller implements Initializable {
             }
         }
     }
-
-    public void getListItem(Event event){
-        dictList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                String word = dictList.getSelectionModel().getSelectedItem();
-                String meaning = getMeaning(word);
-                outputText.setEditable(true);
-                outputText.setText(meaning);
-                outputText.setEditable(false);
-            }
-        });
-    }
-
+//
+//    public void getListItem(Event event){
+//        dictList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
+//            @Override
+//            public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
+//                String word = dictList.getSelectionModel().getSelectedItem();
+//                String meaning = getMeaning(word);
+//                outputText.setEditable(true);
+//                outputText.setText(meaning);
+//                outputText.setEditable(false);
+//            }
+//        });
+//    }
+//
     public void openDictionary(Event event){
         choicebox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
@@ -233,9 +239,10 @@ public class Controller implements Initializable {
         });
 
     }
-
+//
     //initialize
     //list all file in folder listDictionary
+
     public void listFile(File dir) {
         String getname;
         int i = 0;
@@ -244,10 +251,7 @@ public class Controller implements Initializable {
         for (File file: files) {
             getname = file.getName();
             choicebox.getItems().add(getname);
-            if (dictname.equals(getname)){
-                index = i;
-            }
-            i++;
+
         }
         choicebox.getSelectionModel().select(index);
     }
@@ -293,25 +297,32 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
     }
-    public String getfinalpath(String getfile) {
-        File file = new File(getfile);
-        String pathname = file.getAbsolutePath();
 
-        String out = "";
-        for (int i = 0 ; i < getfile.length() ; i++){
-            if (getfile.charAt(i) ==  '\\'){
-                out = out + "/";
-            }else out = out + getfile.charAt(i);
-        }
-        return  out;
+public String getfinalpath(String getfile) {
+    File file = new File(getfile);
+    String pathname = file.getAbsolutePath();
+
+    String out = "";
+    for (int i = 0 ; i < getfile.length() ; i++){
+        if (getfile.charAt(i) ==  '\\'){
+            out = out + "/";
+        }else out = out + getfile.charAt(i);
     }
+    return  out;
+}
+
     //initialize
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+
         String foldername ="src/sample/listDictionary/";
         getDict("src/sample/listDictionary/" + getRecentOpen());
         listFile(new File(getfinalpath(foldername)));
 
+        }catch (Exception e){
+
+        }
     }
 
 }

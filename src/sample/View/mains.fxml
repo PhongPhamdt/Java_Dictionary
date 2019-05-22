@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane minHeight="480.0" minWidth="680.0" prefHeight="480.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Controller">
+   <top>
+      <HBox prefHeight="85.0" prefWidth="640.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane prefHeight="85.0" prefWidth="272.0">
+               <children>
+                  <TextField fx:id="inputText" layoutX="63.0" layoutY="35.0" onKeyTyped="#searching" prefHeight="29.0" prefWidth="194.0" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="235.0" layoutY="40.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/enter-key.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="14.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search" wrappingWidth="45.26171875">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="85.0" prefWidth="408.0">
+               <children>
+                  <MenuButton fx:id="box" layoutX="11.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Additional Feature" AnchorPane.leftAnchor="11.0">
+                    <items>
+                      <MenuItem mnemonicParsing="false" onAction="#addDictScene" text="New Dictionary" />
+                      <MenuItem mnemonicParsing="false" onAction="#addWordScene" text="New Word" />
+                    </items>
+                  </MenuButton>
+                  <ComboBox fx:id="choicebox" layoutX="250.0" layoutY="35.0" prefHeight="25.0" prefWidth="118.0" />
+                  <Text layoutX="177.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Text>
+                  <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="153.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
+                  <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="-10.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+   </top>
+   <left>
+      <ListView fx:id="dictList" prefHeight="375.0" prefWidth="228.0" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="20.0" left="20.0" right="20.0" />
+         </BorderPane.margin>
+      </ListView>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <top>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Translation" BorderPane.alignment="TOP_LEFT">
+               <BorderPane.margin>
+                  <Insets top="3.0" />
+               </BorderPane.margin>
+            </Text>
+         </top>
+         <center>
+            <TextArea fx:id="outputText" prefHeight="386.0" prefWidth="382.0" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="20.0" right="20.0" top="5.0" />
+               </BorderPane.margin>
+            </TextArea>
+         </center>
+      </BorderPane>
+   </center>
+</BorderPane>
