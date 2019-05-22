@@ -1,3 +1,0 @@
-# LALALA
-
-Java Dictionary
