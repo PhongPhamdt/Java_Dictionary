@@ -9,15 +9,14 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-        @Override
-        public void start(Stage primaryStage) throws Exception {
-            Parent root = FXMLLoader.load(getClass().getResource("/sample/View/Main.fxml"));
-            Scene scene = new Scene(root, 680, 480);
-            primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("image/icon.jpg")));
-            primaryStage.setTitle("Hydra Dictionary");
-            primaryStage.setScene(scene);
-            primaryStage.show();
-
+    @Override
+    public void start(Stage primaryStage) throws Exception {
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/View/Main.fxml"));
+        Scene scene = new Scene(root, 680, 480);
+        primaryStage.getIcons().add(new Image(getClass().getResourceAsStream("image/icon.jpg")));
+        primaryStage.setTitle("Hydra Dictionary");
+        primaryStage.setScene(scene);
+        primaryStage.show();
     }
 
 

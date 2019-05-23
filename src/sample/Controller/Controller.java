@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+//import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -41,6 +42,8 @@ public class Controller extends finalPath implements Initializable {
     public static ArrayList<String> order = new ArrayList<>();
     public MenuItem openDict;
     public MenuItem openWord;
+    public Button addDict;
+    public Button newWord;
 
 
     // Trong controller này có 2 kiểu đối tượng TreeMap và ListView. Treemap là nơi danh sách các từ được load vào, đồng
@@ -63,6 +66,7 @@ public class Controller extends finalPath implements Initializable {
     //done
     public void addDictScene(ActionEvent event) throws IOException {
         FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/addDict.fxml"));
+        addParent.setController(this);
         addFrame(addParent, event);
     }
 
@@ -73,8 +77,6 @@ public class Controller extends finalPath implements Initializable {
 
     private void addFrame(FXMLLoader addParent, ActionEvent event) throws IOException {
         Scene addScene = new Scene(addParent.load());
-//        Stage window = (Stage) openDict.getScene().getWindow();
-//        addScene =new Scene(addParent.load());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(addScene);
         window.show();
@@ -301,7 +303,10 @@ public class Controller extends finalPath implements Initializable {
         String foldername ="src/sample/listDictionary/";
         getDict("src/sample/listDictionary/" + getRecentOpen());
         listFile(new File(getfinalpath(foldername)));
-
+        Image image1 = new Image(getClass().getResourceAsStream("/sample/image/add-dict.png"));
+        addDict.setGraphic(new ImageView(image1));
+        Image image2 = new Image(getClass().getResourceAsStream("/sample/image/new-icon.png"));
+        newWord.setGraphic(new ImageView(image2));
     }
 
 }
