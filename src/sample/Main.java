@@ -8,13 +8,13 @@ import javafx.stage.Stage;
 
 
 public class Main extends Application {
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/View/Main.fxml"));
-        Scene scene = new Scene(root, 960, 600);
-        primaryStage.setTitle("Dictionary");
-        primaryStage.setScene(scene);
-        primaryStage.show();
+        @Override
+        public void start(Stage primaryStage) throws Exception {
+            Parent root = FXMLLoader.load(getClass().getResource("/sample/View/Main.fxml"));
+            Scene scene = new Scene(root, 680, 480);
+            primaryStage.setTitle("Dictionary");
+            primaryStage.setScene(scene);
+            primaryStage.show();
 
     }
 

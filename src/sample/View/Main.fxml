@@ -38,13 +38,7 @@
             </AnchorPane>
             <AnchorPane prefHeight="85.0" prefWidth="408.0">
                <children>
-                  <MenuButton fx:id="box" layoutX="11.0" layoutY="35.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Additional Feature" AnchorPane.leftAnchor="11.0">
-                    <items>
-                      <MenuItem mnemonicParsing="false" onAction="#addDictScene" text="New Dictionary" />
-                      <MenuItem mnemonicParsing="false" onAction="#addWordScene" text="New Word" />
-                    </items>
-                  </MenuButton>
-                  <ComboBox fx:id="choicebox" layoutX="250.0" layoutY="35.0" prefHeight="25.0" prefWidth="118.0" />
+                  <ComboBox fx:id="choicebox" layoutX="250.0" layoutY="35.0" onMouseClicked="#openDictionary" prefHeight="25.0" prefWidth="118.0" />
                   <Text layoutX="177.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary">
                      <font>
                         <Font size="14.0" />
@@ -52,13 +46,25 @@
                   </Text>
                   <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="153.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
                   <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="-10.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
+                  <ImageView fitHeight="46.0" fitWidth="43.0" layoutX="11.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/add-dict.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="85.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../image/new-icon.png" />
+                     </image>
+                  </ImageView>
+                  <Text layoutX="11.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Dict" />
+                  <Text layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Word" />
                </children>
             </AnchorPane>
          </children>
       </HBox>
    </top>
    <left>
-      <ListView fx:id="dictList" prefHeight="375.0" prefWidth="228.0" BorderPane.alignment="CENTER">
+      <ListView fx:id="dictList" onMouseClicked="#getListItem" prefHeight="375.0" prefWidth="228.0" BorderPane.alignment="CENTER">
          <BorderPane.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" />
          </BorderPane.margin>
@@ -90,6 +96,12 @@
                </cursor>
             </Text>
             <Line endX="8.0" endY="9.666667938232422" layoutX="324.0" layoutY="47.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
+            <MenuButton fx:id="box" layoutX="248.0" layoutY="110.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Additional Feature" AnchorPane.leftAnchor="248.0">
+              <items>
+                <MenuItem fx:id="openDict" mnemonicParsing="false" onAction="#addDictScene" text="New Dictionary" />
+                <MenuItem fx:id="openWord" mnemonicParsing="false" onAction="#addWordScene" text="New Word" />
+              </items>
+            </MenuButton>
          </children>
       </AnchorPane>
    </center>
