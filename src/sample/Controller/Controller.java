@@ -54,33 +54,31 @@ public class Controller extends finalPath implements Initializable {
 
 
     //done
-    public void addWordScene(ActionEvent event) throws IOException {
+    public void addWordScene(MouseEvent event) throws IOException {
         FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/newWord.fxml"));
         addParent.setController(this);
         addFrame(addParent, event);
     }
 
     //done
-    public void addDictScene(ActionEvent event) throws IOException {
+    public void addDictScene(MouseEvent event) throws IOException {
         FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/addDict.fxml"));
         addFrame(addParent, event);
     }
 
-    public void backToMainScene(ActionEvent event) throws IOException {
+    public void backToMainScene(MouseEvent event) throws IOException {
         FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/Main.fxml"));
         addFrame(addParent, event);
     }
 
-    private void addFrame(FXMLLoader addParent, ActionEvent event) throws IOException {
+    private void addFrame(FXMLLoader addParent, MouseEvent event) throws IOException {
         Scene addScene = new Scene(addParent.load());
-//        Stage window = (Stage) openDict.getScene().getWindow();
-//        addScene =new Scene(addParent.load());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(addScene);
         window.show();
     }
 
-    public void AddtoMainScene(ActionEvent event) throws IOException {
+    public void AddtoMainScene(MouseEvent event) throws IOException {
         String wordadd = wordAdd.getText();
         String meaningadd = meaningAdd.getText();
         dictionary.put(wordadd,meaningadd);
@@ -124,9 +122,6 @@ public class Controller extends finalPath implements Initializable {
             updateListView();
             updateToFile(dictname);
         }
-
-
-
     }
 
     private void updateListView() {

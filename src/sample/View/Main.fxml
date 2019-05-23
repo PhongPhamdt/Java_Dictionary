@@ -46,15 +46,21 @@
                   </Text>
                   <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="153.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
                   <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="-10.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
-                  <ImageView fitHeight="46.0" fitWidth="43.0" layoutX="11.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="46.0" fitWidth="43.0" layoutX="11.0" layoutY="30.0" onMouseClicked="#addDictScene" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/add-dict.png" />
                      </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
-                  <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="85.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="85.0" layoutY="36.0" onMouseClicked="#addWordScene" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../image/new-icon.png" />
                      </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
                   </ImageView>
                   <Text layoutX="11.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Dict" />
                   <Text layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Word" />

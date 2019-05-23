@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -25,7 +26,7 @@ public class addDictController extends finalPath implements Initializable {
     public ChoiceBox choiceBox;
 
     private ArrayList<String> listname = new ArrayList<>();
-    public void AddtoMainScene(ActionEvent event) throws IOException {
+    public void AddtoMainScene(MouseEvent event) throws IOException {
         if (!check(event)) {
             String dictname = dictName.getText();
             create(dictname);
@@ -61,7 +62,7 @@ public class addDictController extends finalPath implements Initializable {
         return false;
     }
 
-    public void backToMainScene(ActionEvent event) throws IOException {
+    public void backToMainScene(MouseEvent event) throws IOException {
         Parent addParent = FXMLLoader.load(getClass().getResource("/sample/View/Main.fxml"));
         Scene addScene =new Scene(addParent);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
