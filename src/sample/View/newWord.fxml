@@ -11,39 +11,39 @@
 
 <AnchorPane prefHeight="420.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.View.AddDict1">
    <children>
-      <TextArea layoutX="92.0" layoutY="205.0" prefHeight="26.0" prefWidth="361.0" />
-      <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="227.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
+      <TextArea layoutX="92.0" layoutY="205.0" prefHeight="26.0" prefWidth="361.0" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="200.0" />
+      <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="227.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="230.0" AnchorPane.topAnchor="15.0">
          <image>
             <Image url="@../image/new-word.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="94.0" layoutY="96.0" prefHeight="44.0" prefWidth="361.0" text="ADD A NEW WORD" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="94.0" layoutY="96.0" prefHeight="44.0" prefWidth="361.0" text="ADD A NEW WORD" textAlignment="CENTER" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="95.0">
          <font>
             <Font name="Bookman Old Style Bold" size="34.0" />
          </font>
       </Label>
-      <Label layoutX="27.0" layoutY="138.0" prefHeight="37.0" prefWidth="500.0" text="If the word already has its translation, this action will overwrite the old one." wrapText="true">
+      <Label layoutX="27.0" layoutY="138.0" prefHeight="37.0" prefWidth="500.0" text="If the word already has its translation, this action will overwrite the old one." wrapText="true" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="140.0">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
       </Label>
-      <Text layoutX="94.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New word:">
+      <Text layoutX="94.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New word:" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="180.0">
          <font>
             <Font size="13.0" />
          </font>
       </Text>
-      <Button layoutX="132.0" layoutY="353.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Add">
+      <Button layoutX="127.0" layoutY="353.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Add" AnchorPane.leftAnchor="130.0" AnchorPane.topAnchor="350.0">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="312.0" layoutY="353.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Cancel">
+      <Button layoutX="312.0" layoutY="353.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Cancel" AnchorPane.leftAnchor="300.0" AnchorPane.topAnchor="350.0">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
       </Button>
-      <TextArea layoutX="92.0" layoutY="273.0" prefHeight="70.0" prefWidth="361.0" />
-      <Text layoutX="94.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Its translation:">
+      <TextArea layoutX="92.0" layoutY="273.0" prefHeight="70.0" prefWidth="361.0" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="270.0" />
+      <Text layoutX="94.0" layoutY="266.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Its translation:" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="250.0">
          <font>
             <Font size="13.0" />
          </font>

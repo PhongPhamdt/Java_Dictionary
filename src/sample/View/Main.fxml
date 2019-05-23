@@ -23,13 +23,13 @@
          <children>
             <AnchorPane prefHeight="85.0" prefWidth="272.0">
                <children>
-                  <TextField fx:id="inputText" layoutX="63.0" layoutY="35.0" onKeyTyped="#searching" prefHeight="29.0" prefWidth="194.0" />
-                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="235.0" layoutY="40.0" opacity="0.7" pickOnBounds="true" preserveRatio="true">
+                  <TextField fx:id="inputText" layoutX="63.0" layoutY="35.0" onKeyTyped="#searching" prefHeight="29.0" prefWidth="194.0" AnchorPane.leftAnchor="65.0" AnchorPane.topAnchor="35.0" />
+                  <ImageView fitHeight="20.0" fitWidth="20.0" layoutX="235.0" layoutY="40.0" opacity="0.7" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="235.0" AnchorPane.topAnchor="40.0">
                      <image>
                         <Image url="@../image/enter-key.png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="14.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search" wrappingWidth="45.26171875">
+                  <Text layoutX="14.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search" wrappingWidth="45.26171875" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="39.0">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -38,26 +38,26 @@
             </AnchorPane>
             <AnchorPane prefHeight="85.0" prefWidth="408.0">
                <children>
-                  <ComboBox fx:id="choicebox" layoutX="250.0" layoutY="35.0" onMouseClicked="#openDictionary" prefHeight="25.0" prefWidth="118.0" />
-                  <Text layoutX="177.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary">
+                  <ComboBox fx:id="choicebox" layoutX="250.0" layoutY="35.0" onMouseClicked="#openDictionary" prefHeight="25.0" prefWidth="118.0" AnchorPane.leftAnchor="270.0" AnchorPane.topAnchor="35.0" />
+                  <Text layoutX="177.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dictionary" AnchorPane.leftAnchor="185.0" AnchorPane.topAnchor="38.0">
                      <font>
                         <Font size="14.0" />
                      </font>
                   </Text>
-                  <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="153.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
-                  <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="-10.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
-                  <ImageView fitHeight="46.0" fitWidth="43.0" layoutX="11.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+                  <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="153.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="25.0" />
+                  <Line endX="7.999969482421875" endY="36.666664123535156" layoutX="-10.0" layoutY="36.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" AnchorPane.leftAnchor="1.0" AnchorPane.topAnchor="25.0" />
+                  <ImageView fitHeight="46.0" fitWidth="43.0" layoutX="11.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="30.0">
                      <image>
                         <Image url="@../image/add-dict.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="85.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="85.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="37.0">
                      <image>
                         <Image url="@../image/new-icon.png" />
                      </image>
                   </ImageView>
-                  <Text layoutX="11.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Dict" />
-                  <Text layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Word" />
+                  <Text layoutX="11.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Dict" AnchorPane.leftAnchor="15.0" AnchorPane.topAnchor="20.0" />
+                  <Text layoutX="77.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="New Word" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="20.0" />
                </children>
             </AnchorPane>
          </children>
@@ -84,8 +84,8 @@
                   <Font size="14.0" />
                </font>
             </Text>
-            <TextArea fx:id="outputText" layoutY="28.0" prefHeight="345.0" prefWidth="402.0" />
-            <Text fx:id="editbutton" layoutX="303.0" layoutY="50.0" onMouseClicked="#edit" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit">
+            <TextArea fx:id="outputText" layoutY="28.0" prefHeight="345.0" prefWidth="402.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.0" />
+            <Text fx:id="editbutton" layoutX="303.0" layoutY="50.0" onMouseClicked="#edit" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit" AnchorPane.rightAnchor="80.0">
                <font>
                   <Font size="13.0" />
                </font>
@@ -93,7 +93,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Text fx:id="deletebutton" layoutX="336.0" layoutY="50.0" onMouseClicked="#delete" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete">
+            <Text fx:id="deletebutton" layoutX="336.0" layoutY="50.0" onMouseClicked="#delete" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete" AnchorPane.rightAnchor="20.0">
                <font>
                   <Font size="13.0" />
                </font>
@@ -101,7 +101,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Text>
-            <Line endX="8.0" endY="9.666667938232422" layoutX="324.0" layoutY="47.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
+            <Line endX="8.0" endY="9.666667938232422" layoutX="324.0" layoutY="47.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" AnchorPane.rightAnchor="65.0" />
          </children>
       </AnchorPane>
    </center>

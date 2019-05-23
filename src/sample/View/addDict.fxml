@@ -12,39 +12,39 @@
 
 <AnchorPane prefHeight="420.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.addDictController">
    <children>
-      <TextArea layoutX="92.0" layoutY="208.0" prefHeight="0.0" prefWidth="361.0" />
-      <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="216.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+      <TextArea layoutX="92.0" layoutY="208.0" prefHeight="0.0" prefWidth="361.0" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="210.0" />
+      <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="216.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="15.0">
          <image>
             <Image url="@../image/book-icon.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="93.0" prefHeight="44.0" prefWidth="361.0" text="ADD A DICTIONARY" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="89.0" layoutY="93.0" prefHeight="44.0" prefWidth="361.0" text="ADD A DICTIONARY" textAlignment="CENTER" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="95.0">
          <font>
             <Font name="Bookman Old Style Bold" size="34.0" />
          </font>
       </Label>
-      <Label layoutX="150.0" layoutY="134.0" text="Create Your Own Dictionary">
+      <Label layoutX="150.0" layoutY="134.0" text="Create Your Own Dictionary" AnchorPane.leftAnchor="150.0" AnchorPane.topAnchor="135.0">
          <font>
             <Font name="Dubai Regular" size="20.0" />
          </font>
       </Label>
-      <Text layoutX="94.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter dictionary's name:">
+      <Text layoutX="94.0" layoutY="199.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Enter dictionary's name:" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="185.0">
          <font>
             <Font size="13.0" />
          </font>
       </Text>
-      <ComboBox layoutX="249.0" layoutY="270.0" prefHeight="21.0" prefWidth="204.0" />
-      <Text layoutX="101.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Existed Dictionary">
+      <ComboBox layoutX="249.0" layoutY="270.0" prefHeight="21.0" prefWidth="204.0" AnchorPane.leftAnchor="250.0" AnchorPane.topAnchor="270.0" />
+      <Text layoutX="101.0" layoutY="287.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Existed Dictionary" AnchorPane.leftAnchor="100.0" AnchorPane.topAnchor="270.0">
          <font>
             <Font size="16.0" />
          </font>
       </Text>
-      <Button layoutX="132.0" layoutY="333.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Add">
+      <Button layoutX="132.0" layoutY="333.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Add" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="335.0">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="312.0" layoutY="333.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Cancel">
+      <Button layoutX="312.0" layoutY="333.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Cancel" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="335.0">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
