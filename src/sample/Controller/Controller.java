@@ -16,14 +16,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.image.*;
 import javafx.stage.Stage;
 import sample.Model.Dict;
-import sample.Model.InitializeDict;
 
 import java.io.*;
 import java.net.URL;
 import java.util.*;
 
 
-public class Controller extends InitializeDict implements Initializable {
+public class Controller implements Initializable {
     @FXML
     public TextField inputText;
     public TextArea outputText;
@@ -237,7 +236,6 @@ public class Controller extends InitializeDict implements Initializable {
 
     //initialize
     //list all file in folder listDictionary
-    @Override
     public void listFile(File dir) {
         String getname;
         int i = 0;
@@ -295,7 +293,18 @@ public class Controller extends InitializeDict implements Initializable {
             e.printStackTrace();
         }
     }
+    public String getfinalpath(String getfile) {
+        File file = new File(getfile);
+        String pathname = file.getAbsolutePath();
 
+        String out = "";
+        for (int i = 0 ; i < getfile.length() ; i++){
+            if (getfile.charAt(i) ==  '\\'){
+                out = out + "/";
+            }else out = out + getfile.charAt(i);
+        }
+        return  out;
+    }
     //initialize
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

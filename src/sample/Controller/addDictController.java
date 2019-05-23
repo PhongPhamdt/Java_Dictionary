@@ -11,7 +11,6 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import sample.Model.InitializeDict;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -20,7 +19,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class addDictController extends InitializeDict implements Initializable {
+public class addDictController implements Initializable {
     public TextField dictName;
     public Label warning;
     public ChoiceBox choiceBox;
@@ -70,7 +69,6 @@ public class addDictController extends InitializeDict implements Initializable {
         window.show();
     }
 
-    @Override
     public void listFile(File dir) {
         String getname;
         File[] files = dir.listFiles();
@@ -80,7 +78,18 @@ public class addDictController extends InitializeDict implements Initializable {
             listname.add(getname);
         }
     }
+    public String getfinalpath(String getfile) {
+        File file = new File(getfile);
+        String pathname = file.getAbsolutePath();
 
+        String out = "";
+        for (int i = 0 ; i < getfile.length() ; i++){
+            if (getfile.charAt(i) ==  '\\'){
+                out = out + "/";
+            }else out = out + getfile.charAt(i);
+        }
+        return  out;
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listFile(new File(getfinalpath("src/sample/listDictionary/")));
