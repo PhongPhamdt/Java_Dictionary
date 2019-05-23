@@ -36,11 +36,11 @@ public class Controller extends finalPath implements Initializable {
     public TextField wordAdd;
     public TextArea meaningAdd;
 
-    private Scene addScene;
     private static TreeMap<String,String> dictionary;
     private static String dictname;
     public static ArrayList<String> order = new ArrayList<>();
-
+    public MenuItem openDict;
+    public MenuItem openWord;
 
 
     // Trong controller này có 2 kiểu đối tượng TreeMap và ListView. Treemap là nơi danh sách các từ được load vào, đồng
@@ -55,7 +55,7 @@ public class Controller extends finalPath implements Initializable {
 
     //done
     public void addWordScene(ActionEvent event) throws IOException {
-        FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/addWord.fxml"));
+        FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/newWord.fxml"));
         addParent.setController(this);
         addFrame(addParent, event);
     }
@@ -72,8 +72,9 @@ public class Controller extends finalPath implements Initializable {
     }
 
     private void addFrame(FXMLLoader addParent, ActionEvent event) throws IOException {
-        addScene =new Scene(addParent.load());
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene addScene = new Scene(addParent.load());
+        Stage window = (Stage) openDict.getScene().getWindow();
+
         window.setScene(addScene);
         window.show();
     }
@@ -222,8 +223,8 @@ public class Controller extends finalPath implements Initializable {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
                 String name = choicebox.getSelectionModel().getSelectedItem().toString();
-                String abc = "src/sample/listDictionary/" + name;
-                getDict(abc);
+                String fname = "src/sample/listDictionary/" + name;
+                getDict(fname);
                 dictname = name;
                 updateRecentOpen(dictname);
                 updateListView();
