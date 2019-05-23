@@ -73,8 +73,9 @@ public class Controller extends finalPath implements Initializable {
 
     private void addFrame(FXMLLoader addParent, ActionEvent event) throws IOException {
         Scene addScene = new Scene(addParent.load());
-        Stage window = (Stage) openDict.getScene().getWindow();
-
+//        Stage window = (Stage) openDict.getScene().getWindow();
+//        addScene =new Scene(addParent.load());
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(addScene);
         window.show();
     }

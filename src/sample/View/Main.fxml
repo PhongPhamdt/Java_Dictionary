@@ -73,12 +73,18 @@
    <center>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <children>
+            <MenuButton fx:id="box" layoutX="248.0" layoutY="110.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Additional Feature" AnchorPane.leftAnchor="248.0">
+              <items>
+                <MenuItem fx:id="openDict" mnemonicParsing="false" onAction="#addDictScene" text="New Dictionary" />
+                <MenuItem fx:id="openWord" mnemonicParsing="false" onAction="#addWordScene" text="New Word" />
+              </items>
+            </MenuButton>
             <Text layoutY="18.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Translation">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <TextArea fx:id="outputText" layoutY="28.0" prefHeight="345.0" prefWidth="382.0" />
+            <TextArea fx:id="outputText" layoutY="28.0" prefHeight="345.0" prefWidth="402.0" />
             <Text fx:id="editbutton" layoutX="303.0" layoutY="50.0" onMouseClicked="#edit" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit">
                <font>
                   <Font size="13.0" />
@@ -96,12 +102,6 @@
                </cursor>
             </Text>
             <Line endX="8.0" endY="9.666667938232422" layoutX="324.0" layoutY="47.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
-            <MenuButton fx:id="box" layoutX="248.0" layoutY="110.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="134.0" text="Additional Feature" AnchorPane.leftAnchor="248.0">
-              <items>
-                <MenuItem fx:id="openDict" mnemonicParsing="false" onAction="#addDictScene" text="New Dictionary" />
-                <MenuItem fx:id="openWord" mnemonicParsing="false" onAction="#addWordScene" text="New Word" />
-              </items>
-            </MenuButton>
          </children>
       </AnchorPane>
    </center>
