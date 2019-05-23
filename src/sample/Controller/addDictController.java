@@ -42,7 +42,7 @@ public class addDictController extends finalPath implements Initializable {
         fw.close();
     }
 
-    public boolean check(Event event) {
+    public boolean check(MouseEvent event) {
         String dictname = dictName.getText();
         if (compareToChoiceBox(dictname)){
             warning.setVisible(true);
