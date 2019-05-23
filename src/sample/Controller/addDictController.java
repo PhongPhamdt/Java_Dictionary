@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class addDictController implements Initializable {
+public class addDictController extends finalPath implements Initializable {
     public TextField dictName;
     public Label warning;
     public ChoiceBox choiceBox;
@@ -78,18 +78,7 @@ public class addDictController implements Initializable {
             listname.add(getname);
         }
     }
-    public String getfinalpath(String getfile) {
-        File file = new File(getfile);
-        String pathname = file.getAbsolutePath();
 
-        String out = "";
-        for (int i = 0 ; i < getfile.length() ; i++){
-            if (getfile.charAt(i) ==  '\\'){
-                out = out + "/";
-            }else out = out + getfile.charAt(i);
-        }
-        return  out;
-    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listFile(new File(getfinalpath("src/sample/listDictionary/")));

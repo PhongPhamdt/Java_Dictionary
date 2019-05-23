@@ -14,6 +14,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.image.*;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import sample.Model.Dict;
 
@@ -22,14 +23,15 @@ import java.net.URL;
 import java.util.*;
 
 
-public class Controller implements Initializable {
+public class Controller extends finalPath implements Initializable {
     @FXML
-    public TextField inputText;
+    public Text editbutton;
     public TextArea outputText;
-    public ImageView editbutton;
-    public ListView<String> dictList;
-    public ImageView deletebutton;
-    public ChoiceBox<String> choicebox;
+    public Text deletebutton;
+    public ListView dictList;
+    public ComboBox choicebox;
+    public MenuButton box;
+    public TextField inputText;
 
     public TextField wordAdd;
     public TextArea meaningAdd;
@@ -55,23 +57,21 @@ public class Controller implements Initializable {
     public void addWordScene(ActionEvent event) throws IOException {
         FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/addWord.fxml"));
         addParent.setController(this);
-        addScene =new Scene(addParent.load());
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(addScene);
-        window.show();
+        addFrame(addParent, event);
     }
 
     //done
     public void addDictScene(ActionEvent event) throws IOException {
         FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/addDict.fxml"));
-        addScene =new Scene(addParent.load());
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(addScene);
-        window.show();
+        addFrame(addParent, event);
     }
 
     public void backToMainScene(ActionEvent event) throws IOException {
         FXMLLoader addParent = new FXMLLoader(getClass().getResource("/sample/View/Main.fxml"));
+        addFrame(addParent, event);
+    }
+
+    private void addFrame(FXMLLoader addParent, ActionEvent event) throws IOException {
         addScene =new Scene(addParent.load());
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(addScene);
@@ -101,7 +101,7 @@ public class Controller implements Initializable {
     public void delete(MouseEvent event){
         int i = 0;
         String word = inputText.getText();
-        String name = dictList.getSelectionModel().getSelectedItem();
+        String name = dictList.getSelectionModel().getSelectedItem().toString();
         try {
 
             if (dictionary.containsKey(name)){
@@ -140,7 +140,7 @@ public class Controller implements Initializable {
         String meaning;
         word =  inputText.getText();
         meaning = outputText.getText();
-        name = dictList.getSelectionModel().getSelectedItem();
+        name = dictList.getSelectionModel().getSelectedItem().toString();
         if (dictionary.containsKey(name)){
             dictionary.replace(name,meaning);
         }else if (dictionary.containsKey(word)){ // if trong trường hợp click edit khi chưa search xong 1 từ nào
@@ -208,7 +208,7 @@ public class Controller implements Initializable {
         dictList.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<String>() {
             @Override
             public void changed(ObservableValue<? extends String> observableValue, String s, String t1) {
-                String word = dictList.getSelectionModel().getSelectedItem();
+                String word = dictList.getSelectionModel().getSelectedItem().toString();
                 String meaning = getMeaning(word);
                 outputText.setEditable(true);
                 outputText.setText(meaning);
@@ -221,7 +221,7 @@ public class Controller implements Initializable {
         choicebox.getSelectionModel().selectedItemProperty().addListener(new ChangeListener() {
             @Override
             public void changed(ObservableValue observableValue, Object o, Object t1) {
-                String name = choicebox.getSelectionModel().getSelectedItem();
+                String name = choicebox.getSelectionModel().getSelectedItem().toString();
                 String abc = "src/sample/listDictionary/" + name;
                 getDict(abc);
                 dictname = name;
@@ -292,18 +292,6 @@ public class Controller implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
-    public String getfinalpath(String getfile) {
-        File file = new File(getfile);
-        String pathname = file.getAbsolutePath();
-
-        String out = "";
-        for (int i = 0 ; i < getfile.length() ; i++){
-            if (getfile.charAt(i) ==  '\\'){
-                out = out + "/";
-            }else out = out + getfile.charAt(i);
-        }
-        return  out;
     }
     //initialize
     @Override

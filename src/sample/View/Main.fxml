@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.MenuButton?>
@@ -72,15 +73,21 @@
                </font>
             </Text>
             <TextArea fx:id="outputText" layoutY="28.0" prefHeight="345.0" prefWidth="382.0" />
-            <Text layoutX="303.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit">
+            <Text fx:id="editbutton" layoutX="303.0" layoutY="50.0" onMouseClicked="#edit" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit">
                <font>
                   <Font size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Text>
-            <Text layoutX="336.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete">
+            <Text fx:id="deletebutton" layoutX="336.0" layoutY="50.0" onMouseClicked="#delete" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete">
                <font>
                   <Font size="13.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Text>
             <Line endX="8.0" endY="9.666667938232422" layoutX="324.0" layoutY="47.0" opacity="0.17" startX="7.999969482421875" startY="-11.333333969116211" />
          </children>
