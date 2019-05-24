@@ -10,7 +10,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="420.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.addDictController">
+<AnchorPane prefHeight="420.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" >
+<!--<AnchorPane prefHeight="420.0" prefWidth="540.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.addDictController">-->
    <children>
       <TextArea layoutX="92.0" layoutY="208.0" prefHeight="0.0" prefWidth="361.0" AnchorPane.leftAnchor="95.0" AnchorPane.topAnchor="210.0" />
       <ImageView fitHeight="88.0" fitWidth="88.0" layoutX="216.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="220.0" AnchorPane.topAnchor="15.0">
@@ -39,12 +40,12 @@
             <Font size="16.0" />
          </font>
       </Text>
-      <Button layoutX="132.0" layoutY="333.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Add" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="335.0">
+      <Button layoutX="132.0" layoutY="333.0" mnemonicParsing="false" onAction="#AddtoMainScene" prefHeight="41.0" prefWidth="96.0" text="Add" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="335.0">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
       </Button>
-      <Button layoutX="312.0" layoutY="333.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="96.0" text="Cancel" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="335.0">
+      <Button layoutX="312.0" layoutY="333.0" mnemonicParsing="false" onAction="#backToMainScene" prefHeight="41.0" prefWidth="96.0" text="Cancel" AnchorPane.leftAnchor="315.0" AnchorPane.topAnchor="335.0">
          <font>
             <Font name="Dubai Regular" size="16.0" />
          </font>
